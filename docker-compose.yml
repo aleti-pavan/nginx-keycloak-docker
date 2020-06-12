@@ -1,0 +1,62 @@
+version: '3'
+
+
+networks:
+  proxy:
+   external: true
+  data:
+   internal: true
+    
+
+volumes:
+  postgres_data:
+      driver: local
+
+services:
+  postgres:
+      image: postgres
+      container_name: postgres
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      networks:
+        - data
+  keycloak:
+      image: quay.io/keycloak/keycloak:latest
+      container_name: keycloak
+      depends_on:
+        - postgres
+      environment:
+        DB_VENDOR: ${DB_VENDOR}
+        DB_ADDR: ${DB_ADDR}
+        DB_DATABASE: ${DB_DATABASE}
+        DB_USER: ${DB_USER}
+        DB_SCHEMA: ${DB_SCHEMA}
+        DB_PASSWORD: ${DB_PASSWORD}
+        KEYCLOAK_USER: ${KEYCLOAK_USER}
+        KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
+        PROXY_ADDRESS_FORWARDING: ${PROXY_ADDRESS_FORWARDING}
+      ports:
+       - 8080:8080
+       - 8443:8443
+      networks:
+         - data
+         - proxy
+  nginx: 
+    image: nginx:1.17.10
+    container_name: production_nginx
+    depends_on:
+       - keycloak
+       - postgres
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /etc/letsencrypt:/etc/letsencrypt/
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - proxy
+      - data
