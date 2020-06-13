@@ -37,11 +37,11 @@ You shoud now have working containers and when you put your server name in the b
 
 Bringing down:
 -------------
-```
+        ```
 
-1. docker-compose down.
+        1. docker-compose down.
 
-```
+        ```
 
 Above command should remove stop and remove working containers.
 
