@@ -7,7 +7,7 @@ This is to set up Keycloak with postgres with nginx reverse proxy __(https)__
 
 2. Install [certificates](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04)
 
-3. Stop and remove nginx after having certs generated.
+3. Stop and remove nginx after having certs generated. ( we will have reverse proxy setup within docker-compose itself)
 
 
 ### Pre-requisite:
