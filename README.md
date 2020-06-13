@@ -29,7 +29,9 @@ provisioning:
 
 3. Update nginx.conf in the directory. replace __testserver.westus.cloudapp.azure.com__ with your servername/domain name for which you have created certs for.
 
-4. docker-compose up -d.
+4. docker network create proxy
+
+5. docker-compose up -d.
 
 ```
 
