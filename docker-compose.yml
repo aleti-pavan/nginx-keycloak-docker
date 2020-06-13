@@ -40,9 +40,8 @@ services:
         KEYCLOAK_PASSWORD: ${KEYCLOAK_PASSWORD}
         PROXY_ADDRESS_FORWARDING: ${PROXY_ADDRESS_FORWARDING}
       ports:
+       - 8080:8080
        - 8443:8443
-      volumes:
-         - /etc/letsencrypt/:/etc/x509/https/
       networks:
          - data
          - proxy
@@ -60,4 +59,3 @@ services:
       - 443:443
     networks:
       - proxy
-      - data
