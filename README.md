@@ -54,3 +54,7 @@ Change: (latest detail from top)
 
 Versions:
 --------
+
+nginx:1.17.10
+
+
