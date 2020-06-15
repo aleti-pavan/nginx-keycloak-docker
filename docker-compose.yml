@@ -14,7 +14,7 @@ volumes:
 
 services:
   postgres:
-      image: postgres
+      image: postgres:9.6.18-alpine
       container_name: postgres
       volumes:
         - postgres_data:/var/lib/postgresql/data
@@ -25,7 +25,7 @@ services:
       networks:
         - data
   keycloak:
-      image: quay.io/keycloak/keycloak:latest
+      image: quay.io/keycloak/keycloak:10.0.2
       container_name: keycloak
       depends_on:
         - postgres
