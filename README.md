@@ -57,4 +57,6 @@ Versions:
 
 nginx:1.17.10
 
+postgres:9.6.18-alpine
 
+quay.io/keycloak/keycloak:10.0.2
