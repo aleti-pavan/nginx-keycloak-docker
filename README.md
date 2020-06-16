@@ -31,7 +31,7 @@ provisioning:
 
 4. docker network create proxy
 
-5. docker-compose up -d.
+5. docker-compose up -d
 
 ```
 
@@ -41,7 +41,7 @@ Bringing down:
 -------------
 ```
 
-1. docker-compose down.
+1. docker-compose down
 
 ```
 
