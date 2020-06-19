@@ -40,7 +40,6 @@ You shoud now have working containers and when you put your server name in the b
 Bringing down:
 -------------
 ```
-
 1. docker-compose down
 
 ```
