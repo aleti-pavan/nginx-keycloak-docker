@@ -14,7 +14,7 @@ volumes:
 
 services:
   postgres:
-      image: postgres:9.6.18-alpine
+      image: postgres:12-alpine 
       container_name: postgres
       volumes:
         - postgres_data:/var/lib/postgresql/data
