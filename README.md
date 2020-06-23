@@ -35,7 +35,16 @@ provisioning:
 
 ```
 
-You shoud now have working containers and when you put your server name in the browser, you should now see __Keycload__ responding.
+You shoud now have working containers and when you put your server name in the browser, you should now see __Keycloak__ responding.
+
+Intially you would see something like below.
+
+![502-badgateway](images/502-badgateway.png)
+
+If you give a minute, you should see a something like below
+
+
+
 
 Bringing down:
 -------------
