@@ -13,7 +13,7 @@ This is to set up Keycloak with postgres with nginx reverse proxy __(https)__
 ### Pre-requisite:
 
 1. You need to create certificates for your domain/servername and which are prerequisites.
-
+   
 
 Usage:
 =======
@@ -25,9 +25,9 @@ provisioning:
 
 1. git clone https://github.com/aleti-pavan/nginx-keycloak-docker.git
 
-2. cd nginx-keycloak-docker
+2. cd nginx-keycloak-docker 
 
-3. Update nginx.conf in the directory. replace __testserver.westus.cloudapp.azure.com__ with your servername/domain name for which you have created certs for.
+3. Update nginx.conf in the current directory. replace `myserver123.ukwest.cloudapp.azure.com` with your servername/domain name for which you have created certs for.
 
 4. docker network create proxy
 
@@ -47,6 +47,12 @@ If you give a minute, you should see a something like below
 
 
 If you click on __Administration Console__ below page should appear
+
+![login-page](images/login-page.png)
+
+## Credentials to Login
+
+__Credentials__ are in the .env file `username: admin; password: Pa55w0rd`
 
 ![admin-console](images/admin-console.png)
 
