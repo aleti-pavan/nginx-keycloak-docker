@@ -43,7 +43,12 @@ Intially you would see something like below.
 
 If you give a minute, you should see a something like below
 
+![welcome-keycloak.png](images/welcome-keycloak.png)
 
+
+If you click on __Administration Console__ below page should appear
+
+![admin-console](images/admin-console.png)
 
 
 Bringing down:
