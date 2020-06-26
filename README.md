@@ -71,7 +71,7 @@ Change: (latest detail from top)
 ------ 
 
 
-Versions:
+Versions(docker images):
 --------
 
 nginx:1.17.10
